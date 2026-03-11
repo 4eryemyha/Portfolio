@@ -660,22 +660,60 @@ body.is-ready .corner-ui__right{
     fill: none; transition: transform 300ms var(--ease-chill);
 }
 .project-card__action:hover svg { transform: translateX(5px); }
-.project-card__visual{
-  position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center;
-  border-radius: 12px; transform: translateX(0); transition: transform 800ms var(--ease-chill);
+/* --- НОВЫЙ БЛОК ВИЗУАЛА --- */
+.project-card__visual {
+  position: absolute; 
+  inset: 0; 
+  z-index: 2; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  border-radius: 12px; 
+  overflow: hidden; /* Чтобы картинка обрезалась */
+  transform: translateX(0); 
+  transition: transform 800ms var(--ease-chill);
 }
-.project-card__title{
-  font-size: clamp(32px, 4vw, 56px); font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-card-title); color: var(--text);
-  line-height: 1.1; text-align: center; padding: 20px;
+
+/* Сама картинка внутри */
+.project-card__bg {
+  position: absolute; 
+  inset: 0; 
+  z-index: -1;
+  transform: translateX(0); 
+  transition: transform 800ms var(--ease-chill);
+}
+
+.project-card__title {
+  font-size: clamp(32px, 4vw, 56px); 
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-card-title); 
+  color: var(--text);
+  line-height: 1.1; 
+  text-align: center; 
+  padding: 20px;
   transition: opacity 300ms ease, transform 500ms var(--ease-chill);
 }
-.project-card:nth-child(even) .project-card__info { left: auto; right: 0; text-align: right; align-items: flex-end; }
-.project-card:nth-child(even) .project-card__tags { justify-content: flex-end; }
-.project-card:nth-child(even) .project-card__bg-num { left: auto; right: clamp(24px, 4vw, 48px); }
-.project-card:hover .project-card__visual{ transform: translateX(45%); }
-.project-card:nth-child(even):hover .project-card__visual{ transform: translateX(-45%); }
-.project-card:hover .project-card__title{ opacity: 0.5; transform: scale(0.95); }
+
+/* --- ЛОГИКА АНИМАЦИИ (Встречное движение) --- */
+.project-card:hover .project-card__visual { 
+  transform: translateX(45%); 
+}
+.project-card:hover .project-card__bg { 
+  transform: translateX(-45%); /* Едет в обратную сторону */
+}
+
+/* Для четных карточек */
+.project-card:nth-child(even):hover .project-card__visual { 
+  transform: translateX(-45%); 
+}
+.project-card:nth-child(even):hover .project-card__bg { 
+  transform: translateX(45%); /* Тоже в обратную */
+}
+
+/* Скрываем заголовок при наведении */
+.project-card:hover .project-card__title { 
+  opacity: 0; 
+}
 
 /* Project reveal on scroll */
 [data-reveal-list] {
