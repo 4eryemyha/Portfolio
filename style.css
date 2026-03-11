@@ -745,13 +745,20 @@ body.is-ready .corner-ui__right{
   /* padding: 10vh 0; - УДАЛЕНО, т.к. паддинг уже на project-detail-content */
 }
 .back-button {
-  grid-column: 1 / 2; justify-self: end; margin-right: clamp(20px, 5vw, 60px);
-  position: sticky; top: 48px;
-  height: 56px; width: 56px; background: rgba(30, 30, 30, 0.7);
-  backdrop-filter: blur(8px); border-radius: 50%; display: grid; place-items: center;
-  z-index: 1001; text-decoration: none;
-  
-  /* ✅ НОВОЕ: Начальное состояние для анимации появления (управляется transition styles ниже) */
+  grid-column: 1 / 2; 
+  justify-self: end; 
+  margin-right: clamp(20px, 5vw, 60px);
+  position: sticky; 
+  top: 48px;
+  height: 56px; 
+  width: 56px; 
+  background: rgba(20, 20, 20, 0.9); /* Сделали чуть темнее без блюра */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Добавили тонкую рамку для четкости */
+  border-radius: 50%; 
+  display: grid; 
+  place-items: center;
+  z-index: 1001; 
+  text-decoration: none;
   opacity: 0;
   transform: translateX(-20px);
 }
