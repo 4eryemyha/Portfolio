@@ -1886,14 +1886,19 @@ body:has(#detail-page-wrapper.is-visible) .side-nav {
   position: absolute; 
   top: 0;
   left: 0;
-  width: 100%; /* Жестко задаем ширину */
-  height: 100%; /* Жестко задаем высоту */
+  width: 100%; 
+  height: 100%; 
   z-index: -1;
-  background-size: cover;
+  
+  /* Эти свойства заставят любую картинку растянуться правильно */
+  background-repeat: no-repeat;
   background-position: center;
+  background-size: cover; 
+  
   transform: translateX(0); 
   transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 
 /* --- ЛОГИКА АНИМАЦИИ --- */
 /* Нечетные (1, 3): шторка едет вправо, картинка влево */
