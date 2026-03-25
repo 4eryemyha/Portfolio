@@ -601,83 +601,83 @@ function setupProjectsAndTransitions() {
     projectObserver.observe(projectSection);
   }
 
-  function showDetailPage(targetDetailId) {
-    mainContentWrapper.classList.add('is-exiting');
+function showDetailPage(targetDetailId) {
+  const mainWrapper = document.querySelector('.main-content-wrapper');
+  const detailWrapper = document.getElementById('detail-page-wrapper');
+  const targetSection = document.getElementById(targetDetailId);
+  const sideNav = document.querySelector('.side-nav');
 
-    const sideNav = document.querySelector('.side-nav');
-    if(sideNav) sideNav.classList.add('nav-hidden');
-    // 🔥 ЗАПУСК МОРФИНГА НАВИГАЦИИ
-    enterDetailNav(targetDetailId);
+  if (!targetSection) return;
 
-    setTimeout(() => {
-      mainContentWrapper.style.display = 'none';
-      detailPageWrapper.style.display = 'grid'; 
-      detailPageWrapper.offsetHeight; 
-      detailPageWrapper.classList.add('is-visible'); 
+  // 1. Мгновенно запускаем исчезновение главной
+  mainWrapper.classList.add('is-exiting');
+  if (sideNav) sideNav.classList.add('nav-hidden');
 
-      // Скрываем все секции
-      allProjectDetailSections.forEach(section => {
-        section.style.display = 'none';
-        section.classList.remove('is-visible'); 
-        section.scrollTop = 0;
-        const f = section.querySelector('.page-footer');
-        if (f) f.classList.remove('show-footer'); // Сброс футера
-      });
-      
-      const targetDetailSection = document.getElementById(targetDetailId);
-      if (targetDetailSection) {
-        targetDetailSection.style.display = 'grid'; 
-        targetDetailSection.scrollTop = 0; 
-        requestAnimationFrame(() => {
-          targetDetailSection.classList.add('is-visible'); 
-        });
-      }
+  // 2. Сразу подготавливаем контейнер проекта
+  detailWrapper.style.display = 'block'; 
+  detailWrapper.scrollTop = 0;
 
-      updateCustomScrollbar(); 
-    }, 600);
-  }
+  // Скрываем все секции, чтобы не накладывались
+  document.querySelectorAll('.project-detail-content').forEach(s => {
+    s.style.display = 'none';
+    s.classList.remove('is-visible'); // Твой CSS ждет именно .is-visible
+  });
+
+  // 3. Включаем нужную секцию физически
+  targetSection.style.display = 'grid';
+
+  // Хак для браузера, чтобы он "увидел" смену display перед анимацией
+  void detailWrapper.offsetWidth;
+
+  // 4. Запускаем анимацию проявления (одновременно с исчезновением главной)
+  detailWrapper.classList.add('is-visible');
+  targetSection.classList.add('is-visible'); // Твой CSS анимирует детей при этом классе
+
+  // 5. Убираем главную из потока только когда она полностью станет прозрачной
+  setTimeout(() => {
+    if (detailWrapper.classList.contains('is-visible')) {
+      mainWrapper.style.display = 'none';
+    }
+  }, 600);
+
+  if (window.updateCustomScrollbar) window.updateCustomScrollbar();
+}
 
 function showMainContent() {
-    exitDetailNav();
+  const mainWrapper = document.querySelector('.main-content-wrapper');
+  const detailWrapper = document.getElementById('detail-page-wrapper');
+  const sideNav = document.querySelector('.side-nav');
 
-    detailPageWrapper.classList.remove('is-visible'); 
-    detailPageWrapper.classList.add('is-exiting');
-
-    setTimeout(() => {
-      detailPageWrapper.style.display = 'none';
-      detailPageWrapper.classList.remove('is-exiting');
-
-      const sideNav = document.querySelector('.side-nav');
-      if(sideNav) sideNav.classList.remove('nav-hidden');
-      
-      allProjectDetailSections.forEach(section => {
-        section.style.display = 'none';
-        section.classList.remove('is-visible');
-        section.scrollTop = 0;
-      });
-      
-      mainContentWrapper.style.display = 'block';
-      mainContentWrapper.classList.remove('is-exiting'); 
-      mainContentWrapper.classList.add('is-returning');
-
-      // ✅ ФИКС СКРОЛЛА:
-      // 1. Отключаем плавность у всей страницы
-      document.documentElement.classList.add('no-smooth-scroll');
-      
-      if (projectSection) {
-        // 2. Мгновенно прыгаем к секции проектов
-        projectSection.scrollIntoView(); 
-      }
-      
-      // 3. Возвращаем плавность обратно через мгновение
-      requestAnimationFrame(() => {
-        document.documentElement.classList.remove('no-smooth-scroll');
-        mainContentWrapper.classList.remove('is-returning');
-      });
-
-      initializeSideNavigationActiveState(); 
-    }, 500);
+  // 1. Возвращаем главную в поток мгновенно
+  mainWrapper.style.display = 'block';
+  
+  // Прыгаем к списку проектов
+  const projectsSection = document.getElementById('projects');
+  if (projectsSection) {
+    projectsSection.scrollIntoView({ behavior: 'auto' });
   }
+
+  void mainWrapper.offsetWidth;
+
+  // 2. Синхронно: проявляем главную и гасим проект
+  mainWrapper.classList.remove('is-exiting');
+  detailWrapper.classList.remove('is-visible');
+  
+  document.querySelectorAll('.project-detail-content').forEach(s => {
+    s.classList.remove('is-visible');
+  });
+
+  if (sideNav) sideNav.classList.remove('nav-hidden');
+
+  // 3. Полностью выключаем контейнер проекта после завершения анимации
+  setTimeout(() => {
+    if (!detailWrapper.classList.contains('is-visible')) {
+      detailWrapper.style.display = 'none';
+    }
+  }, 600);
+}
+
+
     // Находим все карточки проектов
   const projectCards = document.querySelectorAll('.project-card');
   
