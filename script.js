@@ -1,3 +1,118 @@
+/* ===== BILINGUAL INTERFACE ===== */
+(() => {
+  const STORAGE_KEY = "portfolio-language";
+  const translations = {"Еремей":"Yeremey","Матасов":"Matasov","НЕМНОГО ОБО МНЕ":"A LITTLE ABOUT ME","Разработчик, который понимает баланс между «красиво» и «производительно».":"A developer who balances visual quality with performance.","Архитектура & Порядок":"Architecture & Structure","Пишу код, который не страшно открывать через месяц. Ценю структуру и чистоту решений выше костылей.":"I write code that still makes sense a month later. Clear structure and maintainable solutions come before quick patches.","Технический Арт":"Technical Art","Говорю на языке художников. Могу настроить шейдер или свет, не ломая при этом общую логику проекта.":"I bridge art and engineering: shaders, lighting and assets without breaking the project architecture.","Ощущение игры":"Game Feel","Танцевальное прошлое дало чувство ритма. Я знаю, как сделать «сочную» отдачу и плавные движения персонажа.":"My dance background sharpened my sense of rhythm. I use it to build responsive feedback and fluid character movement.","Гибридное мышление":"Hybrid Thinking","Вижу проект целиком — от шейдера до сетевого кода. Это позволяет находить кратчайший путь к реализации сложной фичи без потерь в качестве.":"I see the whole project, from shaders to networking. That helps me find the shortest path to complex features without sacrificing quality.","ЧТО Я УМЕЮ":"WHAT I WORK WITH","Если проект требует и творчества, и инженерии — это моя зона комфорта.":"When a project needs both creativity and engineering, I am in my element.","года создания интерактивных миров":"years building interactive worlds","РАЗРАБОТКА ИГР":"GAME DEVELOPMENT","ИНСТРУМЕНТЫ":"TOOLS","ПРОГРАММИРОВАНИЕ":"PROGRAMMING","БАЗЫ ДАННЫХ":"DATABASES","ЯЗЫКИ":"LANGUAGES","Русский":"Russian","ИЗБРАННЫЕ РАБОТЫ":"SELECTED WORK","Выживайте вместе с друзьями в суровых руинах старого мира. Сражайтесь за ресурсы и попробуйте уцелеть там, где опасность подстерегает на каждом шагу.":"Survive with friends in the harsh ruins of the old world. Fight for resources and stay alive where danger waits around every corner.","Почувствуйте драйв скоростных сражений и станьте мастером клинка. Сокрушайте врагов в безумном темпе, подчиняя себе ритм смертоносного боя.":"Master fast-paced blade combat. Chain attacks, control the rhythm and overwhelm enemies before they can recover.","Отправьтесь в путешествие по загадочной планете и раскройте её древние тайны. Выживите в сердце враждебного мира, где сама природа восстает против вас.":"Explore a mysterious planet and uncover its ancient secrets. Survive a hostile world shaped by systems, creatures and the environment itself.","Открыть проект":"Open project","ОТКРЫТ К ПРЕДЛОЖЕНИЯМ":"OPEN TO OPPORTUNITIES","Свяжитесь со мной удобным для вас способом.":"Reach me through whichever channel works best for you.","К работам":"Back to work","Кооперативное выживание с упором на системный геймплей, физическое взаимодействие и понятную командную игру.":"Co-op survival built around systemic gameplay, physical interaction and clear teamwork.","Год":"Year","Роль":"Role","Технологии":"Technologies","Интуитивное взаимодействие":"Intuitive Interaction","Предметы подчиняются понятной физике: их можно брать, бросать, двигать и использовать в ситуации. В проекте есть и другие связанные системы взаимодействия.":"Objects follow readable physical rules: they can be picked up, thrown, moved and used in context, alongside other connected interaction systems.","Модульная оружейная система":"Modular Weapon System","Оружие собирается из модулей, а каждый обвес меняет его свойства и размер в инвентаре. Кастомизация связана с UI, хранением предметов и другими системами.":"Weapons are assembled from modules, and every attachment changes their properties and inventory footprint. Customization connects to UI, item storage and other systems.","Стабильный кооператив":"Stable Co-op","Ключевые действия и состояния реплицируются между игроками без лишней задержки. Архитектура рассчитана на совместные бои, взаимодействия и дальнейшее расширение.":"Key actions and states are replicated without unnecessary delay. The architecture supports co-op combat, interactions and further expansion.","Техническая часть проекта":"Project technical archive","Схемы, исходники и дополнительные материалы собраны в репозитории.":"Diagrams, source files and additional materials are collected in the repository.","Открыть репозиторий":"Open repository","Экспериментальный 2.5D-платформер, где скорость, комбо и отзывчивое движение важнее лишних правил.":"An experimental 2.5D platformer where speed, combos and responsive movement matter more than unnecessary rules.","Слэшер с системой комбо":"Combo-driven Slasher","Атаки складываются в комбо, меняют темп боя и физически отбрасывают противников. Игрок быстро понимает силу удара и контролирует пространство.":"Attacks chain into combos, shift the tempo and physically launch enemies. The player immediately reads impact and controls the space.","Модульная система врагов":"Modular Enemy System","Поведение, скорость, атаки и анимации собираются из настраиваемых модулей. Новые враги и другие игровые элементы создаются быстрее и без переписывания основы.":"Behavior, speed, attacks and animation are assembled from configurable modules. New enemies and other gameplay elements can be built faster without rewriting the foundation.","2.5D интерфейс на слоях":"Layered 2.5D Interface","Интерфейс разделён по глубине и реагирует на движение курсора. Компоненты можно расширять независимо, сохраняя единый визуальный ритм.":"The interface uses depth layers and responds to cursor movement. Components can evolve independently while keeping a consistent visual rhythm.","Каноничный мувмент платформера":"Responsive Platformer Movement","Двойной прыжок, зацеп за стены и быстрые переходы дают точный контроль. Передвижение остаётся понятным, но позволяет собирать более сложные маршруты и механики.":"Double jumps, wall grabs and fast transitions provide precise control. Movement stays readable while supporting more advanced routes and mechanics.","Учебный полигон для физических систем, процедурной анимации, мира, интерфейса и визуальных экспериментов.":"A development sandbox for physics systems, procedural animation, world building, interface work and visual experiments.","Физическое взаимодействие":"Physical Interaction","Предметы можно брать, бросать, толкать и использовать как часть окружения. Физика связывает объекты между собой и делает мир более живым.":"Objects can be picked up, thrown, pushed and used as part of the environment. Physics connects them and makes the world feel more alive.","Машины на физике":"Physics-based Vehicles","Транспорт работает через физические компоненты и модульную сборку. Отдельные части настраиваются независимо, включая колёсные и другие варианты техники.":"Vehicles use physical components and modular assembly. Individual parts are configured independently across wheeled and other vehicle types.","Адаптивный ландшафт":"Adaptive Landscape","Материал меняется по высоте и наклону, а нужные зоны автоматически получают подходящие объекты. Это ускоряет сборку мира и сохраняет цельный вид.":"The material responds to height and slope, while relevant zones automatically receive matching objects. This speeds up world building and keeps the environment cohesive.","Пост-эффект делит освещение на выразительные уровни и убирает лишние реалистичные градиенты. Мир получает более графичный и узнаваемый стиль.":"The post-process separates lighting into expressive bands and removes unnecessary realistic gradients, giving the world a more graphic and recognizable style.","Визуальное сопровождение":"Visual Direction","Материалы, Niagara-эффекты и другие визуальные системы собраны в одной стилистике. Каждый эффект поддерживает действие, а не существует отдельно от игры.":"Materials, Niagara effects and other visual systems share one direction. Every effect supports the action instead of existing separately from the game.","Процедурные анимации":"Procedural Animation","Пауки подстраивают конечности под рельеф, а драконы двигаются через процедурную логику. Системы реагируют на окружение без набора жёстко заданных клипов.":"Spiders adapt their legs to the terrain, while dragons move through procedural logic. The systems react to the environment without relying on fixed animation clips.","Интерфейс":"Interface","Главное меню, настройки, инвентарь и игровые окна работают в общей визуальной системе. Переходы и состояния остаются понятными и не выбиваются из мира.":"The main menu, settings, inventory and in-game panels share one visual system. Transitions and states remain clear and consistent with the world.","Добыча минералов":"Mineral Extraction","Цикл проходит от поиска месторождения до запуска оборудования и получения ресурсов. Это одна из систем прогрессии, связанных с исследованием мира.":"The loop runs from locating a deposit to starting the equipment and collecting resources. It is one of several progression systems tied to world exploration.","Инструментальный программист":"Tools Programmer","О проекте":"About the project","Скрипт для Blender, автоматизирующий процесс \"запекания\" текстур PBR-материалов для оптимизации ассетов. Значительно сокращает время подготовки моделей для игровых движков.":"A Blender script that automates PBR texture baking for asset optimization, significantly reducing preparation time for game engines.","AI-программист":"AI Programmer","Система ИИ для стелс-механик. NPC реагируют на звук и свет, используя укрытия. Построено на Behavior Trees для гибкого и масштабируемого поведения врагов.":"An AI system for stealth mechanics. NPCs react to sound and light, use cover and rely on Behavior Trees for flexible, scalable behavior.","Реакция на окружение":"Environmental Awareness","NPC обладают зрением и слухом. Они реагируют на движущиеся объекты, звуки шагов или выстрелов, меняя свое состояние на \"поиск\" или \"тревога\".":"NPCs use sight and hearing to react to moving objects, footsteps and gunfire, switching between search and alert states.","Использование укрытий":"Cover Usage","Интеграция системы поиска укрытий. В случае опасности NPC находят ближайшие укрытия и перемещаются к ним, чтобы избежать огня или скрыться от игрока.":"A cover-search system lets NPCs locate and move to nearby protection when threatened or trying to break line of sight.","Игровой движок для разработки проектов от прототипа до релиза: графика, логика, анимации, сборка.":"A game engine used from prototype to release: graphics, logic, animation and builds.","Визуальное программирование в Unreal: быстро собирать логику, прототипировать и связывать системы.":"Visual scripting in Unreal for fast logic, prototyping and system integration.","Движок для разработки игр и интерактива: сцены, компоненты, пайплайн сборки.":"An engine for games and interactive projects: scenes, components and build pipelines.","Риги и анимации для быстрого теста персонажей и движений в прототипах.":"Rigs and animations for quickly testing characters and movement in prototypes.","IDE под C#/.NET: отладка, профайлинг, проекты и решения.":"A C#/.NET IDE for debugging, profiling, projects and solutions.","Лёгкий редактор для скриптов, веба и быстрых правок.":"A lightweight editor for scripts, web work and quick changes.","Моделинг, базовый риг/анимация и подготовка ассетов для игр.":"Modeling, basic rigging and animation, and game-asset preparation.","Логика и системы на C++: расширение движка, производительность, сложные механики.":"C++ logic and systems: engine extensions, performance and complex mechanics.","Основной язык для Unity и инструментов: игровая логика, UI, архитектура.":"The main language for Unity and tools: gameplay logic, UI and architecture.","Скрипты, автоматизация, быстрые утилиты и эксперименты.":"Scripts, automation, quick utilities and experiments.","Базовые запросы: выборки, фильтрация, связи — для хранения данных и простых систем.":"Core queries, filtering and relations for data storage and straightforward systems.","Разметка для простых страниц/инструментов и презентации проектов.":"Markup for lightweight pages, tools and project presentation.","Оформление и адаптивность: сетки, типографика, анимации.":"Styling and responsiveness: layouts, typography and animation.","Реляционная БД для хранения данных проекта: таблицы, связи, базовая аналитика.":"A relational database for project data: tables, relations and basic analytics.","Лёгкая встраиваемая БД: удобно для локальных данных и прототипов.":"A lightweight embedded database for local data and prototypes.","Интерфейсы под механику: читаемость, иерархия, состояния, фидбек.":"Interfaces built around mechanics: readability, hierarchy, states and feedback.","Логика экранов и сценариев: путь пользователя, простота, предсказуемость.":"Screen and flow logic focused on clear, predictable user journeys.","Макеты, компоненты и прототипирование интерфейсов.":"Layouts, components and interface prototyping.","Десктоп-интерфейсы на .NET: окна, биндинги, внутренние утилиты.":"Desktop interfaces on .NET: windows, bindings and internal tools.","Уровень добавлю позже.":"Language level will be added later."};
+  const ariaTranslations = {"На главную — Portfolio 3.4.0":"Home — Portfolio 3.4.0","Открыть проект TOP DOWN SURVIVAL":"Open TOP DOWN SURVIVAL project","Открыть проект PLATFORMER MW":"Open PLATFORMER MW project","Открыть проект DELTA'S ENIGMA":"Open DELTA'S ENIGMA project","Вернуться к избранным работам":"Return to selected work","Язык сайта":"Site language"};
+  const titles = {
+    ru: "Portfolio 3.4.0 — Еремей Матасов",
+    en: "Portfolio 3.4.0 — Yeremey Matasov"
+  };
+  const descriptions = {
+    ru: "Портфолио Еремея Матасова — Full-Stack Game Developer. Unreal Engine 5, C++, Blueprints, UI/UX, технический арт и игровые системы.",
+    en: "Yeremey Matasov's portfolio — Full-Stack Game Developer working with Unreal Engine 5, C++, Blueprints, UI/UX, technical art and gameplay systems."
+  };
+
+  function getStoredLanguage() {
+    try {
+      const queryValue = new URLSearchParams(window.location.search).get("lang");
+      if (queryValue === "ru" || queryValue === "en") return queryValue;
+      const value = localStorage.getItem(STORAGE_KEY);
+      return value === "en" ? "en" : "ru";
+    } catch (error) {
+      return "ru";
+    }
+  }
+
+  function normalize(value) {
+    return String(value || "").replace(/\s+/g, " ").trim();
+  }
+
+  function replaceNodeText(node, value) {
+    const source = node.nodeValue || "";
+    const leading = (source.match(/^\s*/) || [""])[0];
+    const trailing = (source.match(/\s*$/) || [""])[0];
+    node.nodeValue = `${leading}${value}${trailing}`;
+  }
+
+  function translateTextNodes(language) {
+    if (language !== "en") return;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent || ["SCRIPT", "STYLE", "NOSCRIPT"].includes(parent.tagName)) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return translations[normalize(node.nodeValue)] ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+      }
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach((node) => replaceNodeText(node, translations[normalize(node.nodeValue)]));
+  }
+
+  function translateAttributes(language) {
+    document.querySelectorAll("[data-note]").forEach((element) => {
+      if (!element.dataset.noteRu) element.dataset.noteRu = element.dataset.note || "";
+      element.dataset.note = language === "en"
+        ? (translations[normalize(element.dataset.noteRu)] || element.dataset.noteRu)
+        : element.dataset.noteRu;
+    });
+
+    document.querySelectorAll("[aria-label]").forEach((element) => {
+      if (!element.dataset.ariaRu) element.dataset.ariaRu = element.getAttribute("aria-label") || "";
+      const source = element.dataset.ariaRu;
+      element.setAttribute("aria-label", language === "en" ? (ariaTranslations[source] || source) : source);
+    });
+  }
+
+  function updateLanguageControls(language) {
+    document.querySelectorAll("[data-language]").forEach((button) => {
+      const active = button.dataset.language === language;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+      button.disabled = active;
+    });
+    const switcher = document.querySelector(".language-switch");
+    if (switcher) switcher.setAttribute("aria-label", language === "en" ? "Site language" : "Язык сайта");
+    const portrait = document.querySelector(".p-img");
+    if (portrait) portrait.setAttribute("alt", language === "en" ? "Yeremey Matasov" : "Еремей Матасов");
+  }
+
+  function applyLanguage(language) {
+    document.documentElement.lang = language;
+    document.documentElement.dataset.lang = language;
+    document.title = titles[language];
+    const description = document.querySelector('meta[name="description"]');
+    if (description) description.setAttribute("content", descriptions[language]);
+    translateTextNodes(language);
+    translateAttributes(language);
+    updateLanguageControls(language);
+  }
+
+  function switchLanguage(language) {
+    if (language === getStoredLanguage()) return;
+    try { localStorage.setItem(STORAGE_KEY, language); } catch (error) {}
+    document.documentElement.classList.add("i18n-leaving");
+    window.setTimeout(() => {
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", language);
+      url.hash = "";
+      window.location.href = url.toString();
+    }, 360);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const language = getStoredLanguage();
+    applyLanguage(language);
+    document.querySelectorAll("[data-language]").forEach((button) => {
+      button.addEventListener("click", () => switchLanguage(button.dataset.language));
+    });
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => document.documentElement.classList.remove("i18n-pending"));
+    });
+  }, { once: true });
+})();
+
 function clamp01(x){ return Math.max(0, Math.min(1, x)); }
 function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
 
@@ -76,7 +191,9 @@ function setupAboutChill() {
   if (!sec) return;
 
   const line = sec.querySelector(".about3__railLine");
+  const markerLine = sec.querySelector(".section-page-marker__accent");
   const revealables = [
+    sec.querySelector(".section-page-marker"),
     sec.querySelector(".about3__centerWord"),
     sec.querySelector(".about3__centerLead"),
     sec.querySelector(".about3__left .about3__colTitle"),
@@ -91,6 +208,7 @@ function setupAboutChill() {
     sec.classList.remove("is-on");
     revealables.forEach(el => el.classList.remove("is-revealed"));
     if (line) line.style.height = "0px";
+    if (markerLine) markerLine.style.height = "0px";
   }
 
   function computeMaxLine(){
@@ -120,7 +238,9 @@ function setupAboutChill() {
       const p = clamp01((t - startDelay) / duration);
       const pe = easeOutCubic(p);
 
-      if (line) line.style.height = `${Math.round(maxLine * pe)}px`;
+      const currentLineHeight = Math.round(maxLine * pe);
+      if (line) line.style.height = `${currentLineHeight}px`;
+      if (markerLine) markerLine.style.height = `${currentLineHeight}px`;
       const currentY = line.getBoundingClientRect().top + (maxLine * pe);
 
       sorted.forEach((el, i) => {
@@ -156,6 +276,7 @@ function setupAboutChill() {
   if (sec.classList.contains("is-on")) {
     const maxLine = computeMaxLine();
     if (line) line.style.height = `${maxLine}px`;
+    if (markerLine) markerLine.style.height = `${maxLine}px`;
   }
 }, { passive: true });
 }
@@ -197,8 +318,10 @@ function setupSkillsChill() {
   if (!sec) return;
 
   const line = sec.querySelector(".skills3__railLine");
+  const markerLine = sec.querySelector(".section-page-marker__accent");
   const expLineEl = sec.querySelector(".skills3__expLine");
   const revealables = [
+    sec.querySelector(".section-page-marker"),
     sec.querySelector(".skills3__title"),
     sec.querySelector(".skills3__lead"),
     expLineEl,
@@ -211,6 +334,7 @@ function setupSkillsChill() {
     sec.classList.remove("is-on");
     revealables.forEach(el => el.classList.remove("is-revealed"));
     if (line) line.style.height = "0px";
+    if (markerLine) markerLine.style.height = "0px";
     
     if (expLineEl) {
       expLineEl.classList.remove("is-glowing");
@@ -251,7 +375,9 @@ function setupSkillsChill() {
       const p = clamp01((t - startDelay) / duration);
       const pe = easeOutCubic(p);
 
-      if (line) line.style.height = `${Math.round(maxLine * pe)}px`;
+      const currentLineHeight = Math.round(maxLine * pe);
+      if (line) line.style.height = `${currentLineHeight}px`;
+      if (markerLine) markerLine.style.height = `${currentLineHeight}px`;
       const currentY = line.getBoundingClientRect().top + (maxLine * pe);
 
       sorted.forEach((el, i) => {
@@ -266,7 +392,7 @@ function setupSkillsChill() {
             el.classList.add("is-glowing");
             const numEl = el.querySelector('.skills3__expNum');
             if (numEl) {
-                animateCounter(numEl, 3, 1200).then(() => {
+                animateCounter(numEl, 4, 1200).then(() => {
                     const textEl = el.querySelector('.skills3__expText');
                     if (textEl) textEl.classList.add('is-visible');
                 });
@@ -301,6 +427,7 @@ function setupSkillsChill() {
   if (sec.classList.contains("is-on")) {
     const maxLine = computeMaxLine();
     if (line) line.style.height = `${maxLine}px`;
+    if (markerLine) markerLine.style.height = `${maxLine}px`;
   }
 }, { passive: true });
 }
@@ -563,162 +690,312 @@ function initProjectScrollSpy(detailId, links) {
 
 /* ===== PROJECTS SECTION REVEAL & PAGE TRANSITIONS ===== */
 function setupProjectsAndTransitions() {
-  const mainContentWrapper = document.querySelector('.main-content-wrapper');
-  const detailPageWrapper = document.getElementById('detail-page-wrapper');
-  const allProjectDetailSections = document.querySelectorAll('.project-detail-content');
-  const projectActionLinks = document.querySelectorAll('.project-card .project-card__action');
-  const backButtons = document.querySelectorAll('.back-button[data-nav-to="main-content"]');
+  const mainWrapper = document.querySelector('.main-content-wrapper');
+  const detailWrapper = document.getElementById('detail-page-wrapper');
+  const detailSections = Array.from(document.querySelectorAll('.project-detail-content'));
   const projectSection = document.getElementById('projects');
-  
-  // Футер обзервер (для появления контента футера)
-  const detailFooterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show-footer'); 
-      }
-    });
-  }, { 
-    root: detailPageWrapper, 
-    threshold: 0.2
-  });
-  document.querySelectorAll('.page-footer').forEach(footer => {
-    detailFooterObserver.observe(footer);
+  const sideNav = document.querySelector('.side-nav');
+  const projectTitleEl = sideNav?.querySelector('[data-project-nav-title]');
+  const projectLinksEl = sideNav?.querySelector('[data-project-nav-links]');
+
+  if (!mainWrapper || !detailWrapper || !projectSection) return;
+
+  let state = 'main';
+  let transitionToken = 0;
+  let lastCard = null;
+  let lastMainScrollY = 0;
+  let activeSection = null;
+  let navScrollHandler = null;
+  let typingToken = 0;
+  const timers = new Set();
+
+  const wait = (ms, fn) => {
+    const id = window.setTimeout(() => { timers.delete(id); fn(); }, ms);
+    timers.add(id);
+    return id;
+  };
+  const clearTimers = () => {
+    timers.forEach(id => window.clearTimeout(id));
+    timers.clear();
+  };
+  const nextFrame = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+
+  const projectRevealItems = Array.from(projectSection.querySelectorAll('[data-reveal-list]'));
+  const projectCards = Array.from(projectSection.querySelectorAll('.project-card'));
+  projectRevealItems.forEach((item, index) => {
+    item.dataset.revealIndex = String(index);
+    item.style.setProperty('--i', index);
   });
 
-  // Анимация списка проектов на главной
-  if (projectSection) {
-    const projectRevealItems = projectSection.querySelectorAll('[data-reveal-list]');
-    projectRevealItems.forEach((item, index) => {
+  // Replay Works every time the whole section leaves and re-enters the viewport.
+  const projectObserver = new IntersectionObserver(([entry]) => {
+    if (state !== 'main') return;
+    if (entry.isIntersecting) projectSection.classList.add('is-revealed');
+    else projectSection.classList.remove('is-revealed');
+  }, { threshold: 0.08, rootMargin: '-3% 0px -3% 0px' });
+  projectObserver.observe(projectSection);
+
+  async function fastType(el, text) {
+    if (!el) return;
+    const token = ++typingToken;
+    const previous = el.textContent || '';
+    for (let i = previous.length; i >= 0; i -= 3) {
+      if (token !== typingToken) return;
+      el.textContent = previous.slice(0, i);
+      await new Promise(r => window.setTimeout(r, 6));
+    }
+    for (let i = 0; i <= text.length; i += 3) {
+      if (token !== typingToken) return;
+      el.textContent = text.slice(0, i);
+      await new Promise(r => window.setTimeout(r, 7));
+    }
+    if (token === typingToken) el.textContent = text;
+  }
+
+  function parseNav(section) {
+    try { return JSON.parse(section.dataset.projectNav || '[]'); }
+    catch { return []; }
+  }
+
+  function updateProjectNavActive() {
+    if (!activeSection || !projectLinksEl) return;
+    const links = Array.from(projectLinksEl.querySelectorAll('.side-nav__projectLink'));
+    const anchor = detailWrapper.scrollTop + detailWrapper.clientHeight * .32;
+    let active = links[0] || null;
+    links.forEach(link => {
+      const target = document.getElementById(link.dataset.target);
+      if (target && anchor >= target.offsetTop) active = link;
+    });
+    links.forEach(link => link.classList.toggle('is-active', link === active));
+  }
+
+  function buildProjectNav(section) {
+    if (!sideNav || !projectLinksEl) return;
+    sideNav.classList.add('is-project-switching');
+    projectLinksEl.innerHTML = '';
+    parseNav(section).forEach(([label, targetId], index) => {
+      const link = document.createElement('a');
+      link.className = 'side-nav__projectLink';
+      link.href = `#${targetId}`;
+      link.dataset.target = targetId;
+      const labelEl = document.createElement('span');
+      labelEl.className = 'side-nav__projectLabel';
+      labelEl.textContent = label;
+      const dotEl = document.createElement('span');
+      dotEl.className = 'side-nav__projectDot';
+      dotEl.setAttribute('aria-hidden', 'true');
+      link.append(labelEl, dotEl);
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        const target = document.getElementById(targetId);
+        if (target) detailWrapper.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+      });
+      projectLinksEl.appendChild(link);
+      wait(150 + index * 46, () => link.classList.add('is-ready'));
+    });
+    wait(105, () => {
+      sideNav.classList.remove('is-project-switching');
+      updateProjectNavActive();
+    });
+  }
+
+  function enterProjectNav(section, switching = false) {
+    if (!sideNav) return;
+    typingToken++;
+    sideNav.classList.remove('nav-hidden', 'is-project-leaving');
+    if (projectTitleEl) projectTitleEl.textContent = section.dataset.projectTitle || 'PROJECT';
+    sideNav.classList.add('is-project-mode');
+    sideNav.querySelector('.side-nav__projectMode')?.setAttribute('aria-hidden', 'false');
+    buildProjectNav(section);
+    if (navScrollHandler) detailWrapper.removeEventListener('scroll', navScrollHandler);
+    navScrollHandler = () => requestAnimationFrame(updateProjectNavActive);
+    detailWrapper.addEventListener('scroll', navScrollHandler, { passive: true });
+  }
+
+  function exitProjectNav() {
+    if (!sideNav) return;
+    typingToken++;
+    sideNav.classList.remove('is-project-entering', 'is-project-switching');
+    sideNav.classList.add('is-project-leaving');
+    if (navScrollHandler) detailWrapper.removeEventListener('scroll', navScrollHandler);
+    navScrollHandler = null;
+    wait(165, () => {
+      sideNav.classList.remove('is-project-mode', 'is-project-leaving');
+      sideNav.querySelector('.side-nav__projectMode')?.setAttribute('aria-hidden', 'true');
+      if (projectTitleEl) projectTitleEl.textContent = 'WORKS';
+      if (projectLinksEl) projectLinksEl.innerHTML = '';
+    });
+  }
+
+  function prepareSection(section) {
+    detailSections.forEach(item => {
+      const active = item === section;
+      item.style.display = active ? 'grid' : 'none';
+      item.classList.remove('is-visible');
+    });
+    activeSection = section;
+    detailWrapper.scrollTop = 0;
+    if (window.resetDetailScrollReveal) window.resetDetailScrollReveal(section);
+    if (window.updateCustomScrollbar) requestAnimationFrame(window.updateCustomScrollbar);
+  }
+
+  function activatePreparedSection(section) {
+    section.classList.add('is-visible');
+    if (window.updateCustomScrollbar) requestAnimationFrame(window.updateCustomScrollbar);
+  }
+
+  function restoreRevealOrder() {
+    projectRevealItems.forEach(item => {
+      const index = Number(item.dataset.revealIndex || 0);
       item.style.setProperty('--i', index);
     });
-    const projectObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          projectSection.classList.add('is-revealed');
-        }
+  }
+
+  function revealWorksFromCard(card) {
+    const cardIndex = Math.max(0, projectCards.indexOf(card));
+    projectRevealItems.forEach(item => {
+      if (item === card) item.style.setProperty('--i', 0);
+      else if (item.classList.contains('project-card')) {
+        item.style.setProperty('--i', Math.abs(projectCards.indexOf(item) - cardIndex) + 1);
+      } else item.style.setProperty('--i', 2);
+    });
+    projectSection.classList.remove('is-revealed');
+    void projectSection.offsetWidth;
+    projectSection.classList.add('is-revealed');
+    wait(950, restoreRevealOrder);
+  }
+
+  function setScrollInstant(y) {
+    const root = document.documentElement;
+    const body = document.body;
+    root.classList.add('no-smooth-scroll');
+    body.classList.add('no-smooth-scroll');
+    const rootPrev = root.style.scrollBehavior;
+    const bodyPrev = body.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    body.style.scrollBehavior = 'auto';
+    window.scrollTo(0, Math.max(0, y));
+    requestAnimationFrame(() => {
+      window.scrollTo(0, Math.max(0, y));
+      root.style.scrollBehavior = rootPrev;
+      body.style.scrollBehavior = bodyPrev;
+      root.classList.remove('no-smooth-scroll');
+      body.classList.remove('no-smooth-scroll');
+    });
+  }
+
+  async function openProject(sectionId, card) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    const token = ++transitionToken;
+    clearTimers();
+    lastCard = card || lastCard;
+
+    if (state === 'detail' || state === 'opening' || state === 'switching') {
+      state = 'switching';
+      detailWrapper.classList.add('is-switching');
+      wait(105, async () => {
+        if (token !== transitionToken) return;
+        prepareSection(section);
+        enterProjectNav(section, true);
+        await nextFrame();
+        if (token !== transitionToken) return;
+        activatePreparedSection(section);
+        detailWrapper.classList.remove('is-switching');
+        state = 'detail';
       });
-    }, { threshold: 0.2 });
-    projectObserver.observe(projectSection);
-  }
+      return;
+    }
 
-function showDetailPage(targetDetailId) {
-  const mainWrapper = document.querySelector('.main-content-wrapper');
-  const detailWrapper = document.getElementById('detail-page-wrapper');
-  const targetSection = document.getElementById(targetDetailId);
-  const sideNav = document.querySelector('.side-nav');
+    state = 'opening';
+    lastMainScrollY = window.scrollY;
+    mainWrapper.classList.remove('is-returning');
+    mainWrapper.classList.add('is-exiting');
 
-  if (!targetSection) return;
+    detailWrapper.style.display = 'block';
+    detailWrapper.classList.remove('is-visible', 'is-exiting', 'is-switching');
+    prepareSection(section);
+    enterProjectNav(section, false);
+    void detailWrapper.offsetWidth;
+    await nextFrame();
+    if (token !== transitionToken) return;
+    detailWrapper.classList.add('is-visible');
+    activatePreparedSection(section);
 
-  // 1. Мгновенно запускаем исчезновение главной
-  mainWrapper.classList.add('is-exiting');
-  if (sideNav) sideNav.classList.add('nav-hidden');
-
-  // 2. Сразу подготавливаем контейнер проекта
-  detailWrapper.style.display = 'block'; 
-  detailWrapper.scrollTop = 0;
-
-  // Скрываем все секции, чтобы не накладывались
-  document.querySelectorAll('.project-detail-content').forEach(s => {
-    s.style.display = 'none';
-    s.classList.remove('is-visible'); // Твой CSS ждет именно .is-visible
-  });
-
-  // 3. Включаем нужную секцию физически
-  targetSection.style.display = 'grid';
-
-  // Хак для браузера, чтобы он "увидел" смену display перед анимацией
-  void detailWrapper.offsetWidth;
-
-  // 4. Запускаем анимацию проявления (одновременно с исчезновением главной)
-  detailWrapper.classList.add('is-visible');
-  targetSection.classList.add('is-visible'); // Твой CSS анимирует детей при этом классе
-
-  // 5. Убираем главную из потока только когда она полностью станет прозрачной
-  setTimeout(() => {
-    if (detailWrapper.classList.contains('is-visible')) {
+    wait(600, () => {
+      if (token !== transitionToken) return;
       mainWrapper.style.display = 'none';
-    }
-  }, 600);
-
-  if (window.updateCustomScrollbar) window.updateCustomScrollbar();
-}
-
-function showMainContent() {
-  const mainWrapper = document.querySelector('.main-content-wrapper');
-  const detailWrapper = document.getElementById('detail-page-wrapper');
-  const sideNav = document.querySelector('.side-nav');
-
-  // 1. Возвращаем главную в поток мгновенно
-  mainWrapper.style.display = 'block';
-  
-  // Прыгаем к списку проектов
-  const projectsSection = document.getElementById('projects');
-  if (projectsSection) {
-    projectsSection.scrollIntoView({ behavior: 'auto' });
+      state = 'detail';
+    });
   }
 
-  void mainWrapper.offsetWidth;
+  async function returnToCard() {
+    if (state === 'main' || state === 'closing') return;
+    const token = ++transitionToken;
+    clearTimers();
+    state = 'closing';
+    detailWrapper.classList.remove('is-switching');
+    detailWrapper.classList.add('is-exiting');
+    exitProjectNav();
 
-  // 2. Синхронно: проявляем главную и гасим проект
-  mainWrapper.classList.remove('is-exiting');
-  detailWrapper.classList.remove('is-visible');
-  
-  document.querySelectorAll('.project-detail-content').forEach(s => {
-    s.classList.remove('is-visible');
-  });
+    mainWrapper.style.display = 'block';
+    mainWrapper.classList.remove('is-exiting');
+    mainWrapper.classList.add('is-returning');
+    setScrollInstant(lastMainScrollY);
+    revealWorksFromCard(lastCard);
+    void mainWrapper.offsetWidth;
+    await nextFrame();
+    if (token !== transitionToken) return;
+    mainWrapper.classList.remove('is-returning');
 
-  if (sideNav) sideNav.classList.remove('nav-hidden');
-
-  // 3. Полностью выключаем контейнер проекта после завершения анимации
-  setTimeout(() => {
-    if (!detailWrapper.classList.contains('is-visible')) {
-      detailWrapper.style.display = 'none';
+    if (lastCard) {
+      lastCard.classList.remove('is-return-focus');
+      void lastCard.offsetWidth;
+      lastCard.classList.add('is-return-focus');
+      wait(820, () => lastCard?.classList.remove('is-return-focus'));
     }
-  }, 600);
-}
 
-
-    // Находим все карточки проектов
-  const projectCards = document.querySelectorAll('.project-card');
-  
-  // Вешаем обработчик клика на каждую карточку
-  projectCards.forEach(card => {
-    card.addEventListener('click', (e) => {
-      // Ищем кнопку "Открыть проект" внутри этой карточки
-      const actionButton = card.querySelector('.project-card__action');
-      
-      // Если кнопка есть И клик был НЕ по самой кнопке (чтобы не сломать кнопку)
-      if (actionButton && !e.target.closest('.project-card__action')) {
-        e.preventDefault();
-        const targetId = actionButton.dataset.navTo;
-        if (targetId && targetId.startsWith('project-detail-')) {
-          showDetailPage(targetId);
-        }
-      }
+    wait(560, () => {
+      if (token !== transitionToken) return;
+      detailWrapper.classList.remove('is-visible', 'is-exiting', 'is-switching');
+      detailWrapper.style.display = 'none';
+      detailSections.forEach(section => {
+        section.style.display = 'none';
+        section.classList.remove('is-visible');
+      });
+      activeSection = null;
+      state = 'main';
     });
-    
-    // Меняем курсор на "руку" при наведении, чтобы было понятно что это ссылка
-    card.style.cursor = 'pointer';
-  });
-  
-  // Оставляем обработчик для самой кнопки (чтобы она тоже работала)
-  projectActionLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.stopPropagation(); // Чтобы клик по кнопке не вызвал ещё и клик по карточке
-      const targetId = e.currentTarget.dataset.navTo;
-      if (targetId && targetId.startsWith('project-detail-')) {
-        showDetailPage(targetId);
-      }
+  }
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    const action = card.querySelector('.project-card__action');
+    const targetId = action?.dataset.navTo;
+    const open = event => {
+      if (!targetId) return;
+      event?.preventDefault();
+      event?.stopPropagation();
+      openProject(targetId, card);
+    };
+    card.addEventListener('click', open);
+    action?.addEventListener('click', open);
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') open(event);
     });
   });
 
-  backButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      showMainContent();
+  document.querySelectorAll('.back-button[data-nav-to="main-content"]').forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      returnToCard();
     });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') returnToCard();
   });
 }
+
 
 
 /* ===== CONTACT SECTION ===== */
@@ -841,90 +1118,96 @@ function initializeSideNavigationActiveState() {
 
 /* ===== CUSTOM SCROLLBAR (DETAIL) ===== */
 function setupCustomScrollbar() {
-  const wrapper = document.getElementById('detail-page-wrapper'); 
+  const wrapper = document.getElementById('detail-page-wrapper');
   const container = document.querySelector('.custom-scroll');
   const thumb = document.querySelector('.custom-scroll__thumb');
-
   if (!wrapper || !container || !thumb) return;
 
-  let isDragging = false;
-  let startY, startScrollTop;
+  let dragging = false;
+  let startY = 0;
+  let startScroll = 0;
 
-  // 1. Функция обновления позиции ползунка при обычном скролле (колесиком)
-  function updateThumb() { 
-    if (isDragging) return; // Не обновляем, если тянем мышкой
-    const scrollableHeight = wrapper.scrollHeight - wrapper.clientHeight;
-    if (scrollableHeight <= 0) {
-      container.style.opacity = '0';
-      return;
-    }
-    container.style.opacity = '1'; 
-
-    const progress = wrapper.scrollTop / scrollableHeight;
-    const availableSpace = container.clientHeight - thumb.clientHeight;
-    thumb.style.transform = `translateY(${progress * availableSpace}px)`;
+  function metrics(){
+    const scrollable = Math.max(0, wrapper.scrollHeight - wrapper.clientHeight);
+    const ratio = wrapper.scrollHeight ? wrapper.clientHeight / wrapper.scrollHeight : 1;
+    const thumbHeight = Math.max(56, Math.min(container.clientHeight * .42, container.clientHeight * ratio));
+    thumb.style.height = `${thumbHeight}px`;
+    return { scrollable, travel: Math.max(1, container.clientHeight - thumbHeight) };
   }
 
-  // 2. Логика захвата ползунка (Drag)
-  thumb.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startY = e.pageY;
-    startScrollTop = wrapper.scrollTop;
-    document.body.style.userSelect = 'none'; // Отключаем выделение текста при перетаскивании
-    thumb.style.cursor = 'grabbing';
+  function updateThumb(){
+    if (dragging) return;
+    const { scrollable, travel } = metrics();
+    container.style.opacity = scrollable > 0 ? '1' : '0';
+    const progress = scrollable ? wrapper.scrollTop / scrollable : 0;
+    thumb.style.transform = `translateY(${Math.max(0, Math.min(travel, progress * travel))}px)`;
+  }
+
+  thumb.addEventListener('mousedown', event => {
+    dragging = true;
+    startY = event.clientY;
+    startScroll = wrapper.scrollTop;
+    document.body.style.userSelect = 'none';
+    event.preventDefault();
   });
-
-  // 3. Логика перемещения мыши по всему экрану
-  window.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-
-    const deltaY = e.pageY - startY;
-    const scrollableHeight = wrapper.scrollHeight - wrapper.clientHeight;
-    const availableTrackSpace = container.clientHeight - thumb.clientHeight;
-    
-    // Вычисляем, на сколько процентов мы сдвинули мышь относительно трека
-    const scrollDelta = (deltaY / availableTrackSpace) * scrollableHeight;
-    wrapper.scrollTop = startScrollTop + scrollDelta;
-
-    // Сразу двигаем ползунок вручную для плавности
-    const progress = wrapper.scrollTop / scrollableHeight;
-    const translateY = Math.max(0, Math.min(availableTrackSpace, progress * availableTrackSpace));
-    thumb.style.transform = `translateY(${translateY}px)`;
+  window.addEventListener('mousemove', event => {
+    if (!dragging) return;
+    const { scrollable, travel } = metrics();
+    wrapper.scrollTop = startScroll + ((event.clientY - startY) / travel) * scrollable;
   });
-
-  // 4. Логика отпускания мыши
   window.addEventListener('mouseup', () => {
-    if (isDragging) {
-      isDragging = false;
-      document.body.style.userSelect = '';
-      thumb.style.cursor = 'grab';
-    }
+    dragging = false;
+    document.body.style.userSelect = '';
+    updateThumb();
   });
-
-  // 5. Клик по самому треку (прыжок к месту)
-  container.addEventListener('mousedown', (e) => {
-    if (e.target === thumb) return; // Если кликнули именно по ползунку, ничего не делаем (сработает mousedown на thumb)
-    
+  container.addEventListener('mousedown', event => {
+    if (event.target === thumb) return;
     const rect = container.getBoundingClientRect();
-    const clickY = e.clientY - rect.top;
-    const scrollableHeight = wrapper.scrollHeight - wrapper.clientHeight;
-    const availableTrackSpace = container.clientHeight - thumb.clientHeight;
-    
-    const targetProgress = (clickY - thumb.clientHeight / 2) / availableTrackSpace;
-    wrapper.scrollTo({
-      top: targetProgress * scrollableHeight,
-      behavior: 'smooth'
-    });
+    const { scrollable, travel } = metrics();
+    const thumbHeight = thumb.getBoundingClientRect().height;
+    const progress = Math.max(0, Math.min(1, (event.clientY - rect.top - thumbHeight / 2) / travel));
+    wrapper.scrollTo({ top: progress * scrollable, behavior:'smooth' });
   });
-
-  // Слушатели
-  wrapper.addEventListener('scroll', updateThumb);
-  window.addEventListener('resize', updateThumb);
-  
-  // Экспортируем функцию для внешнего вызова (при открытии проекта)
+  wrapper.addEventListener('scroll', updateThumb, { passive:true });
+  window.addEventListener('resize', updateThumb, { passive:true });
   window.updateCustomScrollbar = updateThumb;
 }
 
+
+
+/* ===== DETAIL CONTENT: reveal while the user moves through a case ===== */
+function setupDetailScrollReveal() {
+  const wrapper = document.getElementById('detail-page-wrapper');
+  if (!wrapper || !('IntersectionObserver' in window)) return;
+
+  const items = Array.from(document.querySelectorAll('[data-detail-scroll]'));
+  if (!items.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-in-view');
+      }
+    });
+  }, {
+    root: wrapper,
+    threshold: 0.12,
+    rootMargin: '0px 0px -8% 0px'
+  });
+
+  items.forEach((item) => observer.observe(item));
+
+  window.resetDetailScrollReveal = (activeSection) => {
+    items.forEach((item) => item.classList.remove('is-in-view'));
+    if (!activeSection) return;
+    const activeItems = Array.from(activeSection.querySelectorAll('[data-detail-scroll]'));
+    activeItems.forEach((item, index) => item.style.setProperty('--detail-order', index));
+    window.setTimeout(() => {
+      const first = activeItems[0];
+      if (first && activeSection.classList.contains('is-visible')) first.classList.add('is-in-view');
+    }, 350);
+  };
+}
 
 /* ===== START ===== */
 window.addEventListener("DOMContentLoaded", () => {
@@ -941,6 +1224,7 @@ window.addEventListener("DOMContentLoaded", () => {
   setupProjectsAndTransitions();
   setupContactSection();
   setupCustomScrollbar();
+  setupDetailScrollReveal();
   initializeSideNavigationActiveState();
 
   const heroAnimationsTotalDuration = 2000;
@@ -965,7 +1249,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!sec) return;
 
     const line = sec.querySelector(".about3__railLine");
+    const markerLine = sec.querySelector(".section-page-marker__accent");
     const label = sec.querySelector(".about3__label");
+    const sectionIndex = sec.querySelector(".section-page-marker");
     const centerWord = sec.querySelector(".about3__centerWord");
     const centerLead = sec.querySelector(".about3__centerLead");
     const counterVal = sec.querySelector(".counter-val");
@@ -975,18 +1261,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const rightItems = sec.querySelectorAll(".right-side .skill-item");
 
     let rafId = null;
-    let hasLeveledUp = false;
+    let levelStage = 0;
     let isRunning = false;
 
     function reset() {
         if (rafId) cancelAnimationFrame(rafId);
         isRunning = false;
-        hasLeveledUp = false;
+        levelStage = 0;
         
         line.style.height = "0px";
         line.style.opacity = "0";
+        if (markerLine) markerLine.style.height = "0px";
         
         label.classList.remove("is-revealed");
+        if (sectionIndex) sectionIndex.classList.remove("is-revealed");
         centerWord.classList.remove("is-revealed");
         centerLead.classList.remove("is-revealed");
         photoCol.classList.remove("is-revealed");
@@ -1022,6 +1310,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Включаем видимость сразу
             line.style.opacity = "1";
             label.classList.add("is-revealed");
+            if (sectionIndex) sectionIndex.classList.add("is-revealed");
             centerWord.classList.add("is-revealed");
 
             const lineDelay = 720;
@@ -1031,24 +1320,38 @@ document.addEventListener("DOMContentLoaded", () => {
                 const p = Math.min((elapsed - lineDelay) / lineDuration, 1);
                 const pe = easeOutCubic(p);
                 
-                line.style.height = `${Math.round(targetLineH * pe)}px`;
+                const currentLineHeight = Math.round(targetLineH * pe);
+                line.style.height = `${currentLineHeight}px`;
+                if (markerLine) markerLine.style.height = `${currentLineHeight}px`;
                 
                 if (p > 0.05) centerLead.classList.add("is-revealed");
                 if (pe > 0.15) photoCol.classList.add("is-revealed");
                 if (pe > 0.30) { leftItems[0].classList.add("is-revealed"); rightItems[0].classList.add("is-revealed"); }
                 if (pe > 0.70) { leftItems[1].classList.add("is-revealed"); rightItems[1].classList.add("is-revealed"); }
 
-                if (p <= 0.70) {
-                    const pCounter = p / 0.70;
+                const spawnLevel = (value) => {
+                    counterVal.innerText = String(value);
+                    counterVal.classList.add("is-bright");
+                    counterVal.classList.remove("bump-anim");
+                    void counterVal.offsetWidth;
+                    counterVal.classList.add("bump-anim");
+                    const pop = document.createElement("div");
+                    pop.className = "plus-pop";
+                    pop.innerText = "+1";
+                    levelUpTarget.appendChild(pop);
+                    window.setTimeout(() => pop.remove(), 1150);
+                };
+
+                if (p <= 0.58) {
+                    const pCounter = p / 0.58;
                     const currentAge = Math.floor(counterEase(pCounter) * 20.9);
-                    counterVal.innerText = Math.max(0, Math.min(currentAge, 20));
-                } else if (!hasLeveledUp) {
-                    hasLeveledUp = true;
-                    counterVal.innerText = "21";
-                    counterVal.classList.add("is-bright", "bump-anim");
-                    const p1 = document.createElement("div");
-                    p1.className = "plus-pop"; p1.innerText = "+1";
-                    levelUpTarget.appendChild(p1);
+                    counterVal.innerText = String(Math.max(0, Math.min(currentAge, 20)));
+                } else if (p > 0.64 && levelStage === 0) {
+                    levelStage = 1;
+                    spawnLevel(21);
+                } else if (p > 0.685 && levelStage === 1) {
+                    levelStage = 2;
+                    spawnLevel(22);
                 }
             }
 
